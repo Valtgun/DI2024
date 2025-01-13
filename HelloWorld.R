@@ -91,6 +91,64 @@ set.seed(Sys.Date())
 y <- sample(x = 1:12, size=1)
 y
 
+# ----------------------------------------------- Jan 13
+
+plot(sin((1:40)/pi), main = "grafks", xlab = "x", ylab = "y", col = "blue")
+plot(sin((1:40)/pi), main = "grafks", xlab = "x", ylab = "y", col = "blue", cex = 0.75, pch = 3)
+
+plot(sin((1:40)/pi), main = "grafks", xlab = "x", ylab = "y", col = "blue", cex = 0.75, pch = 3, type = "l")
+plot(sin((1:40)/pi), main = "grafks", xlab = "x", ylab = "y", col = "blue", cex = 0.75, pch = 3, type = "l", lwd = 2, lty = 2)
+
+plot(sin((1:40)/pi),cos((1:40)/pi), main = "grafks", xlab = "x", ylab = "y", col = "blue", cex = 0.75, pch = 3, type = "l", lwd = 2)
+
+l1 <- c(1,2,3,5,7,15)
+l2 <- c(4,3,2,1,5,4)
+plot(l1, l2, type = "l", col = "blue")
+lines(l1*1.5, l2, type = "l", col = "green")
+
+pie(l2, labels = c("a", "b", "c", "d", "e", "f"), col = "blue")
+legend("bottomright", c("a", "b", "c", "d", "e", "f"), fill = "blue")
+
+
+x1 = c("AA", "BB", "CC", "DD")
+y1 = c(1, 3, 7, 5)
+barplot(y1, names.arg = x1)
+barplot(y1, names.arg = x1, density = 10, width = y1, horiz = TRUE)
+
+# ----
+library(ggplot2)
+library(MASS)
+df <- Cars93
+
+ggplot(df, aes(x = Horsepower, y = Make)) + geom_point() + 
+  labs(title = "HP / Make", caption = "(zs)")
+
+ggplot(Cars93, aes(x = Horsepower)) +
+  geom_histogram()
+
+ggplot(df, aes(x = Price, y = Horsepower)) + geom_point() + geom_smooth()
+ggplot(df, aes(x = Price, y = MPG.city))  + geom_point() + geom_smooth()
+
+head(mtcars)
+
+ggplot(mtcars, aes(x = hp)) +
+  geom_histogram()
+
+which.max(mtcars$hp)
+mtcars[31,]
+
+min(mtcars$hp)
+max(mtcars$hp)
+mean(mtcars$hp)
+median(mtcars$hp)
+quantile(mtcars$hp)
+
+quantile(mtcars$hp, c(0.2,0.8))
+
+# ------------------------------------------
+
+
+
 
 
 
